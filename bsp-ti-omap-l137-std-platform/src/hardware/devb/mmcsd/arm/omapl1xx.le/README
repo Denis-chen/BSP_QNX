@@ -1,0 +1,17 @@
+BOARD SPECIFIC OPTIONS
+
+Board specific options can be passed to devb-mmcsd-omapl1xx to 
+specify which gpio pin has to be used as write protect & insert detection.
+
+OPTIONS:-
+	gpio_base		= Physical Base address of gpio registers
+	wp_gpio_bank	= Number of gpio bank which contains the gpio pin used
+					  for Write Protect detection
+	wp_gpio			= The gpio pin number in the wp_gpio_bank
+	ins_gpio_bank	= Number of gpio bank which contains the gpio pin used
+					  for Insert detection
+	ins_gpio		= The gpio pin number in the wp_gpio_bank
+	ins_irq			= The irq number to use for insert detection
+
+devb-mmcsd-omapl1xx cam mmcsd bs="wp_gpio_bank=2 wp_gpio=1 ins_gpio_bank=2 ins_gpio=1 ins_irq=44" blk cache=2M
+

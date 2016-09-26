@@ -1,0 +1,8 @@
+STATE=Experimental
+INSTALLDIR=armle/sbin/
+INSTALLNAME=devc-ser8250
+NAME=devc-ser8250
+USER=hx32927
+HOST=MWKS431399
+DATE=2016/08/31-10:53:37-CDT
+DESCRIPTION=Character device driver for the 8250 chipset

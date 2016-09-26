@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;bsp-ti-omap-l137-std-platform/src/hardware/i1553/omp137spi/omapl137spi.c&apos; to &apos;i1553drv.c&apos;" description="Rename resource &apos;omapl137spi.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/hardware/i1553/omp137spi/omapl137spi.c" name="i1553drv.c" stamp="1469724541237" updateReferences="true"/>
+</session>

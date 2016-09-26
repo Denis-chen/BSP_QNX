@@ -1,0 +1,3 @@
+define PINFO
+PINFO DESCRIPTION=DM644x SPI driver
+endef

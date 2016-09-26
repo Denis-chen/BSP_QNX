@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<module name="devn-dm644x">
+	<type>Element</type>
+	<classification>Driver</classification>
+	
+	<description>
+            <short>DM644x Ethernet Driver</short>
+	        <abstract>
+	                <![CDATA[Driver for the DM644x ethernet MAC.]]>
+	        </abstract>
+	</description>
+
+	<supports>
+		<availability>
+			<cpu isa="arm">
+				<byteOrder>le</byteOrder>
+			</cpu>
+		</availability>
+	</supports>
+
+	<source available="false">
+		<location type="">.</location>
+	</source>
+	<GroupOwner>hw</GroupOwner>
+
+	<contents>
+		<component id="dm644x" generated="true">
+			<location basedir="{cpu}/dll{.:endian}"
+				 runtime="true">devn-dm644x.so</location>
+		</component>     
+	</contents>
+
+	<requires>
+		<part build="true" location="lib/drvr"/>
+		<part build="false" location="hardware/devn"/>
+	</requires>
+
+</module>

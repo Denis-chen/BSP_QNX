@@ -1,0 +1,3 @@
+define PINFO
+PINFO DESCRIPTION=arm TI OMAPL137 startup
+endef

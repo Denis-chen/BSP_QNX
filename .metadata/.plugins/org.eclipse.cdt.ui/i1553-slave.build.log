@@ -1,0 +1,20 @@
+"C:\\QNX650\\host\\win32\\x86\\usr\\bin\\make.exe" -k CPULIST=arm all --file=C:/Users/hx32927/AppData/Local/Temp/QMakefile14726605557452302522763870698661.tmp 
+C:/QNX650/host/win32/x86/usr/bin/make.exe -j 1 -Carm -fMakefile all
+make.exe[1]: Entering directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/i1553-slave/arm'
+C:/QNX650/host/win32/x86/usr/bin/make.exe -j 1 -Ca-le -fMakefile all 
+make.exe[2]: Entering directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/i1553-slave/arm/a-le'
+make.exe[2]: Nothing to be done for `all'.
+make.exe[2]: Leaving directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/i1553-slave/arm/a-le'
+C:/QNX650/host/win32/x86/usr/bin/make.exe -j 1 -Ca-le-g -fMakefile all  
+make.exe[2]: Entering directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/i1553-slave/arm/a-le-g'
+make.exe[2]: Nothing to be done for `all'.
+make.exe[2]: Leaving directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/i1553-slave/arm/a-le-g'
+C:/QNX650/host/win32/x86/usr/bin/make.exe -j 1 -Ca-shared-le -fMakefile all  
+make.exe[2]: Entering directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/i1553-slave/arm/a-shared-le'
+make.exe[2]: Nothing to be done for `all'.
+make.exe[2]: Leaving directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/i1553-slave/arm/a-shared-le'
+C:/QNX650/host/win32/x86/usr/bin/make.exe -j 1 -Ca-shared-le-g -fMakefile all
+make.exe[2]: Entering directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/i1553-slave/arm/a-shared-le-g'
+make.exe[2]: Nothing to be done for `all'.
+make.exe[2]: Leaving directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/i1553-slave/arm/a-shared-le-g'
+make.exe[1]: Leaving directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/i1553-slave/arm'

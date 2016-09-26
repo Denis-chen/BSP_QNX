@@ -1,0 +1,48 @@
+/*
+ * _i1553_notify.c
+ *
+ *  Created on: Jul 13, 2016
+ *      Author: hx32927
+ */
+
+
+#include "proto.h"
+#include "verbose.h"
+
+/*****************************************************************************************
+* Function name		: _i1553_notify(resmgr_context_t *ctp, io_notify_t *msg, i1553_ocb_t *ocb)
+* 	 returns		: bytes read
+* 	 arg1			: resmgr context_t
+* 	 arg2			: io notify message
+* 	 arg3			: ocb
+* Created by		: Wei Sun
+* Date				: 07/28/2016
+* Description		: 1553 read operation
+* Notes		    	: None
+* Revision History	:
+*					7/28/2016, Wei Sun
+*					- Created
+******************************************************************************************/
+
+int _i1553_notify(resmgr_context_t ctp, io_notify_t *msg, i1553_ocb_t *ocb)
+{
+   I1553DEV           *drvhdl = (I1553DEV *)ocb->hdr->attr;
+   i1553_spi_t        *dev = (i1553_spi_t*)drvhdl;
+
+   int                trig ;                    /* trig will tell iofunc_notif() which conditions are currently satified. */
+
+   if(dev->txbuf->fillLevel < (dev->txbufsize/2))               /* if the 1553 circular buffer is empty then we can accept the data from client immediately */
+	   trig |= _NOTIFY_COND_OUTPUT;
+
+   if(dev->rxbuf->fillLevel > 0 && dev->i1553_cmd_rcv_cnt > 0)      /* would like to notify client not only the buffer is not empty also the full command has been received */
+	   trig |= _NOTIFY_COND_INPUT;
+
+
+   /*
+    * iofunc_notify will do any necessary handling, including
+    * adding the client to the notification list if need be.
+    */
+
+   return(iofunc_notify(ctp, msg, drvhdl->notify, trig, NULL, NULL));
+
+}

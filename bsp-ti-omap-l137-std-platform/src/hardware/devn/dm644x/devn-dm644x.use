@@ -1,0 +1,30 @@
+%C Driver for TI DM644X Ethernet MAC controllers
+
+Syntax:
+  io-net -d dm644x [option[,option ...]] ... &
+
+Options (to override autodetected defaults):
+
+  connector=0|1|2|3   Network cable connector type: 0 BNC,1 UTP,2 AUI,3 FIBRE
+  duplex=0|1          Half (0) or full (1) duplex mode.
+  iftype=num          Interface type. <net/if_types.h> (defIFT_ETHER)
+  iorange=0xXXXXXXXX  IO base address.
+  irq=num             IRQ of the interface.
+  lan=num             LAN number.
+  mac=XXXXXXXXXXXX    Interface address of the controller.
+  media=num           Media type <hw/nicinfo.h> (default NIC_MEDIA_802_3)
+  mru=num             Maximum receive unit (default: 1514)
+  mtu=num             Maximum transmission unit (default 1514).
+  nomulticast         Disable multicast support.
+  phy=num             Address of connected PHY device.
+  priority=N          Priority of the driver event thread. (default 21).
+  promiscuous         Enable promiscuous mode.
+  speed=10|100        Media data rate in Megabits/Second
+  uptype=name         Interface name. (default "en")
+  verbose=N           Set verbosity level. (default 0)
+
+Examples:
+  # Start io-net using the DM644X driver and the full TCP/IP stack: 
+  io-net -ddm644x mac=00405306175c -ptcpip
+  ifconfig en0 10.10.10.10
+

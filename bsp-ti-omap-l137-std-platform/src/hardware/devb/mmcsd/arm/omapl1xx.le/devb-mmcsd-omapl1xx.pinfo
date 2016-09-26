@@ -1,0 +1,8 @@
+STATE=Experimental
+INSTALLDIR=armle/sbin/
+INSTALLNAME=devb-mmcsd-omapl1xx
+NAME=devb-mmcsd-omapl1xx
+USER=hx32927
+HOST=MWKS431399
+DATE=2016/08/31-11:24:41-CDT
+DESCRIPTION=mmc/sd disk driver

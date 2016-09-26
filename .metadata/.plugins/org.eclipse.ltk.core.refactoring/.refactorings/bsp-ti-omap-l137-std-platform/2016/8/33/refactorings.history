@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;bsp-ti-omap-l137-std-platform/src/hardware/i1553/slave/_i1553_iomsg_read.c&apos; to &apos;_i1553_iomsg.c&apos;" description="Rename resource &apos;_i1553_iomsg_read.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/hardware/i1553/slave/_i1553_iomsg_read.c" name="_i1553_iomsg.c" stamp="1470776548137" updateReferences="true"/>
+</session>

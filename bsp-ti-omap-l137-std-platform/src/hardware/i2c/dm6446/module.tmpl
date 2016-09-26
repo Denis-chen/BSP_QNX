@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<module name="i2c-dm6446">
+	<type>Element</type>
+	<classification>Driver</classification>
+
+	<description>
+            <short>DM6446 I2C Driver</short>
+	        <abstract>
+	                <![CDATA[This Multi-master fast mode capable interface is supported in the TI DM6446 Davinci BSP.]]>
+	        </abstract>
+	</description>
+
+	<supports>
+		<availability>
+			<cpu isa="arm">
+			<byteOrder>le</byteOrder>
+			</cpu>
+		</availability>
+	</supports>
+
+	<source available="false">
+		<location type="">.</location>
+	</source>
+	<GroupOwner>hw</GroupOwner>
+	<RuntimeComponent>Neutrino RTOS</RuntimeComponent>
+
+
+	<contents>
+		<component id="dm6446" generated="true">
+			<location basedir="{cpu}/{endian}"
+				 runtime="true">i2c-dm6446</location>
+		</component>
+	</contents>
+
+	<requires>
+		<part build="false" location="lib/i2c"/>
+	</requires>
+
+</module>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<module name="i2c-dm6446">
+  <classification>Driver</classification>
+  <description>
+    <short>DM6446 I2C Driver</short>
+    <abstract><![CDATA[
+	                This Multi-master fast mode capable interface is supported in the TI DM6446 Davinci BSP.
+	        ]]></abstract>
+  </description>
+  <supports>
+    <availability>
+      <cpu isa="arm">
+        <byteOrder>le</byteOrder>
+      </cpu>
+    </availability>
+  </supports>
+  <contents>
+    <component id="dm6446" generated="true">
+      <location basedir="arm/le">i2c-dm6446</location>
+    </component>
+  </contents>
+  <requires>
+    <part build="false" location="lib/i2c"/>
+  </requires>
+</module>

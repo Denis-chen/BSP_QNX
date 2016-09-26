@@ -1,0 +1,8 @@
+STATE=Experimental
+INSTALLDIR=armle/boot/build/
+INSTALLNAME=omapl137.build
+NAME=build
+USER=hx32927
+HOST=MWKS431399
+DATE=2016/08/31-11:26:41-CDT
+DESCRIPTION=Example build file for startup-omapl137

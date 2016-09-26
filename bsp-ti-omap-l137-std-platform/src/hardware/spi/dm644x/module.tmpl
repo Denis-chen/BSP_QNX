@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<module name="spi-dm644x">
+	<type>Element</type>
+	<classification>Driver</classification>
+
+	<description>
+		<short>DM644X SPI Driver</short>
+	        <abstract>
+		<![CDATA[The Serial Protocol Interface on the Jacinto EVM is protocol compatible 
+with the standard Serial Protocol Interface (SPI). The JACINTO BSP 
+support for the SPI (spi-dm644x.so) supports Full Duplex communication in 
+Master mode. The SPI provides serial communications between the OMAP
+CPU core and peripheral devices.]]>
+	        </abstract>
+	</description>
+
+	<supports>
+		<availability>
+			<cpu isa="arm">
+				<byteOrder>le</byteOrder>
+			</cpu>
+		</availability>
+	</supports>
+
+	<source available="false">
+		<location type="">.</location>
+	</source>
+	<GroupOwner>hw</GroupOwner>
+	<RuntimeComponent>Neutrino RTOS</RuntimeComponent>
+
+
+	<contents>
+		<component id="spi-dm644x" generated="true">
+			<location basedir="{cpu}/dll{.:endian}"
+				 runtime="true">spi-dm644x.so</location>
+		</component>
+	</contents>
+
+	<requires>
+		<part build="true" location="lib/spi-master"/>
+	</requires>
+</module>

@@ -1,0 +1,23 @@
+%C Driver for DM644X SPI controllers
+
+Syntax:
+  spi-master -d dm644x [option[,option ...]] ... &
+
+Options (to override autodetected defaults):
+
+  base=address        Base address of SPI controller, default 0x01C66800
+  irq=num             IRQ of the interface, default 43
+  clock=num           SPI clock, default 90MHz
+  edmabase=address    Base address for EDMA controller, default 0x01C00000
+  edmairq=num         IRQ of SPI receive EDMA channel, default 0xC111
+  edmachannel=num     EDMA channel for SPI receive
+  edma=num            0, disalbe EDMA; -1, only use EDMA on DMA call; other, DMA threshold; default -1
+  c2t=num             Chip-select-active-to-transmit-start-delay, default 0
+  t2c=num             Transmit-end-to-chip-select-inactive-delay
+  en0def=num          Chip select 0 default pattern, default 0
+  en1def=num          Chip select 1 default pattern, default 0
+  loopback            Loopback mode enable, default - disalbe
+
+Examples:
+  # Start SPI driver with base address and IRQ
+  spi-master -d dm644x base=0x01c66800,irq=43

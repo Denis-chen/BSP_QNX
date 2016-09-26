@@ -1,0 +1,8 @@
+STATE=Experimental
+INSTALLDIR=armle/lib/
+INSTALLNAME=libdma-omapl1xxS.a
+NAME=libdma-omapl1xxS.a
+USER=hx32927
+HOST=MWKS431399
+DATE=2016/08/31-10:53:08-CDT
+DESCRIPTION=DMA engine driver

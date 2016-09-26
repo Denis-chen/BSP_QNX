@@ -1,0 +1,4 @@
+description.buildorder=bsp-ti-omap-l137-std-platform
+description.defaultbuildorder=false
+eclipse.preferences.version=1
+version=1

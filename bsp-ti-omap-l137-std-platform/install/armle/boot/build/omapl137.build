@@ -1,0 +1,277 @@
+###########################################################################
+##
+## QNX Neutrino 6.4.0 on the Texas Instruments OMAPL137EVM Board
+##
+###########################################################################
+##
+## SUPPORTED DEVICES:
+##
+## SERIAL: UART(8250)
+## NETWORK: On board
+## I2C: On-chip I2C
+## RTC: On-chip RTC
+## SPI: On-chip SPI
+## USB: On-chip USB
+## DMA: On-chip DMA
+## DSPLINK: On-chip DSP (DSPLINK version: 1.62)
+## MMCSD: On-chip MMCSD
+###########################################################################
+##
+## NOTES:
+##
+###########################################################################
+
+###########################################################################
+## START OF BUILD SCRIPT
+###########################################################################
+
+[image=0xc0008000]
+[virtual=armle,raw] .bootstrap = {
+    #######################################################################
+    ## Provide proper -L option for your board 
+    ##
+    ## -L : specify the DSPLink memory Base address and Size
+    ## -v : specify verbose to print the system page
+    ##
+    #######################################################################
+	startup-omapl137 -wt -L 0xC3E00000,0x200000 -vvv
+    #######################################################################
+    ## PATH set here is the *safe* path for executables.
+    ## LD_LIBRARY_PATH set here is the *safe* path for libraries.
+    ##     i.e. These are the paths searched by setuid/setgid binaries.
+    ##          (confstr(_CS_PATH...) and confstr(_CS_LIBPATH...))
+    #######################################################################
+	PATH=/proc/boot:/bin LD_LIBRARY_PATH=/proc/boot:/lib:/usr/lib:/lib/dll procnto-instr
+}
+[+script] .script = {
+    procmgr_symlink ../../proc/boot/libc.so.3 /usr/lib/ldqnx.so.2
+
+    display_msg Welcome to QNX Neutrino 6.4.0 on the TI OMAPL137EVM Board
+
+    #######################################################################
+    ## SERIAL driver
+    #######################################################################
+    devc-ser8250 -e -F -S -b115200 -c150000000/16 0x01d0d000^2,61
+    waitfor /dev/ser1 4
+    reopen /dev/ser1
+
+    slogger 
+    pipe 
+
+    #######################################################################
+    ## NETWORK driver (tiny stack)
+    ##  - substitute your IP address for 1.2.3.4
+    #######################################################################
+    #  OMAP L137 EVM
+    #######################################################################
+	display_msg Starting on-board ethernet
+	io-pkt-v4 -ddm644x-omapl1xx verbose=5 -ptcpip
+    waitfor /dev/io-net/en0 10
+	ifconfig en0 10.90.74.3/24 up
+
+    #######################################################################
+    ## I2C driver
+    #######################################################################
+	display_msg Starting I2C0 Services
+
+    # Before starting audio driver, the I2C driver should be started at low 
+    # speed mode (10 kbps) using "--b" option in following command
+
+	i2c-dm6446 -a0x1 -i15 -p0x01c22000 -f24000000 -l0x1000  --b10000
+	waitfor /dev/i2c0 10
+
+    display_msg Starting I2C1 Services
+
+	i2c-dm6446 -a0x2 -i51 -p0x01e28000 -f24000000 -l0x1000 --u1
+	waitfor /dev/i2c1 10
+
+    #######################################################################
+    ## SPI driver
+    #######################################################################
+	#display_msg Starting SPI0 Services
+
+	#spi-master -d dm644x-omapl1xx base=0x01c41000,irq=20,clock=150000000,edma=0,en0def=1,spicntrlr=omapl1xx
+	#waitfor /dev/spi0 10
+
+    #display_msg Starting SPI1 Services
+
+    #spi-master -u1 -d dm644x-omapl1xx base=0x01e12000,irq=56,clock=150000000,edma=0,en0def=1,spicntrlr=omapl1xx
+    #waitfor /dev/spi1 10
+
+    #######################################################################
+    ## RTC
+    #######################################################################
+
+	# To Set the RTC Time from OS time
+	# rtc -s -v omapl1xx
+
+	# To get the RTC time to the OS time
+	# rtc -v omapl1xx
+
+    #######################################################################
+    ## USB driver
+    #######################################################################
+    display_msg Starting USB driver
+
+	io-usb -dohci-omapl1xx ioport=0x01E25000,irq=59 -domapl1xx-mg ioport=0x01E00400,irq=58
+	waitfor /dev/io-usb/io-usb 10
+
+    #######################################################################
+    ## MMC/SD support
+    #######################################################################
+    display_msg Starting MMC/SD driver
+
+    devb-mmcsd-omapl1xx cam mmcsd bs="wp_gpio_bank=2 wp_gpio=1 ins_gpio_bank=2 ins_gpio=2 ins_gpio_irq=44" verbose=3 blk cache=2M
+
+    #######################################################################
+    ## REMOTE_DEBUG (gdb or Momentics)
+    ##  - refer to the help documentation for the gdb, qconn and the IDE
+    ##    for more information on remote debugging
+    ##  - the commands shown require that NETWORK is enabled
+    #######################################################################
+	# Need ptys for telnet/ftp/debugger
+	devc-pty -n16 &
+
+	# first device create by devc-pty is /dev/ptyp0. wait for it.
+	waitfor /dev/ptyp0
+
+	# qconn is what the QNX IDE needs to attach to this system.
+	# port=8000 is the default value.
+	qconn 
+
+    #######################################################################
+    ## These env variables are inherited by all the programs which follow
+    #######################################################################
+    SYSNAME=nto
+    TERM=qansi
+    PATH=/bin:/proc/boot
+    LD_LIBRARY_PATH=/proc/boot
+
+    [+session] ksh 
+}
+
+[type=link] /bin/sh=/proc/boot/ksh
+[type=link] /dev/console=/dev/ser1
+[type=link] /tmp=/dev/shmem
+# make the /temp point to a writeable location (our ram disk.)
+
+libc.so
+
+###########################################################################
+## uncomment for legacy binary support (Momentics 6.3.2 and earlier)  
+###########################################################################
+#libc.so.2
+
+###########################################################################
+## uncomment for SPI
+###########################################################################
+ spi-dm644x-omapl1xx.so
+
+###########################################################################
+## uncomment for USB support
+###########################################################################
+ libusbdi.so
+ libcam.so.2
+ cam-disk.so
+ io-blk.so
+ fs-qnx4.so
+ fs-qnx6.so
+ fs-dos.so
+ fs-ext2.so
+ cam-cdrom.so
+ fs-cd.so
+ fs-udf.so
+ devu-ohci-omapl1xx.so
+ devu-omapl1xx-mg.so
+
+###########################################################################
+## uncomment for EDMA Library
+###########################################################################
+ libdma-omapl1xx.so
+
+###########################################################################
+## uncomment for NETWORK driver
+###########################################################################
+ devn-dm644x-omapl1xx.so
+ devnp-shim.so
+ libsocket.so
+
+[data=c]
+devc-ser8250
+
+###########################################################################
+## uncomment for REMOTE_DEBUG (gdb or Momentics)
+###########################################################################
+ devc-pty
+ qconn
+ pdebug
+
+###########################################################################
+## uncomment for I2C
+###########################################################################
+ i2c-dm6446
+
+###########################################################################
+## uncomment for SPI
+###########################################################################
+ #spi-master
+
+###########################################################################
+## uncomment for NETWORK driver
+###########################################################################
+ io-pkt-v4
+ ifconfig
+
+###########################################################################
+## uncomment for USB support
+###########################################################################
+ io-usb
+ usb
+ devu-kbd
+ devb-umass
+ devu-mouse
+
+###########################################################################
+## uncomment for MMCSD support
+###########################################################################
+ devb-mmcsd-omapl1xx
+
+###########################################################################
+## General Utilities
+###########################################################################
+/usr/lib/terminfo/v/vt100=${QNX_TARGET}/usr/lib/terminfo/v/vt100
+/usr/lib/terminfo/q/qansi=${QNX_TARGET}/usr/lib/terminfo/q/qansi
+cat
+chmod
+cp
+mv
+rm
+rmdir
+mkdir
+date
+echo
+login
+ls
+ksh
+more
+mount
+mq
+pipe
+pidin
+shutdown
+sleep
+slogger
+sloginfo
+slay
+syslogd
+touch
+umount
+uname
+use
+lshwi
+rtc
+ping
+###########################################################################
+## END OF BUILD SCRIPT
+###########################################################################
+

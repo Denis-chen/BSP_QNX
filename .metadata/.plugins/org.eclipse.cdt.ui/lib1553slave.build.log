@@ -1,0 +1,55 @@
+"C:\\QNX650\\host\\win32\\x86\\usr\\bin\\make.exe" -k CPULIST=arm clean all --file=C:/Users/hx32927/AppData/Local/Temp/QMakefile14743135772694900263126037519362.tmp 
+C:/QNX650/host/win32/x86/usr/bin/make.exe -j 1 -Carm -fMakefile clean
+make.exe[1]: Entering directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm'
+C:/QNX650/host/win32/x86/usr/bin/make.exe -j 1 -Ca-le -fMakefile clean 
+make.exe[2]: Entering directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-le'
+C:/QNX650/host/win32/x86/usr/bin/rm -f  liblib1553slave.a  *.pinfo *.o *.err *.map mapfile *.sym *.i   
+make.exe[2]: Leaving directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-le'
+C:/QNX650/host/win32/x86/usr/bin/make.exe -j 1 -Ca-le-g -fMakefile clean  
+make.exe[2]: Entering directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-le-g'
+C:/QNX650/host/win32/x86/usr/bin/rm -f  liblib1553slave_g.a  *.pinfo *.o *.err *.map mapfile *.sym *.i   
+make.exe[2]: Leaving directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-le-g'
+C:/QNX650/host/win32/x86/usr/bin/make.exe -j 1 -Ca-shared-le -fMakefile clean  
+make.exe[2]: Entering directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-shared-le'
+C:/QNX650/host/win32/x86/usr/bin/rm -f  liblib1553slaveS.a  *.pinfo *.o *.err *.map mapfile *.sym *.i   
+make.exe[2]: Leaving directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-shared-le'
+C:/QNX650/host/win32/x86/usr/bin/make.exe -j 1 -Ca-shared-le-g -fMakefile clean
+make.exe[2]: Entering directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-shared-le-g'
+C:/QNX650/host/win32/x86/usr/bin/rm -f  liblib1553slave_gS.a  *.pinfo *.o *.err *.map mapfile *.sym *.i   
+make.exe[2]: Leaving directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-shared-le-g'
+make.exe[1]: Leaving directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm'
+C:/QNX650/host/win32/x86/usr/bin/make.exe -j 1 -Carm -fMakefile all
+make.exe[1]: Entering directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm'
+C:/QNX650/host/win32/x86/usr/bin/make.exe -j 1 -Ca-le -fMakefile all 
+make.exe[2]: Entering directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-le'
+C:/QNX650/host/win32/x86/usr/bin/qcc -Vgcc_ntoarm -c -O -Wc,-Wall          -DNDEBUG   -I. -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-le -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/public -IC:/QNX650/target/qnx6/usr/include       -EL      -DVARIANT_a -DVARIANT_le -DBUILDENV_qss  C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/i1553_close.c 
+C:/QNX650/host/win32/x86/usr/bin/qcc -Vgcc_ntoarm -c -O -Wc,-Wall          -DNDEBUG   -I. -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-le -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/public -IC:/QNX650/target/qnx6/usr/include       -EL      -DVARIANT_a -DVARIANT_le -DBUILDENV_qss  C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/i1553_open.c 
+C:/QNX650/host/win32/x86/usr/bin/rm -f  C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-le/liblib1553slave.a
+C:/QNX650/host/win32/x86/usr/bin/qcc -Vgcc_ntoarm -a  C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-le/liblib1553slave.a i1553_close.o i1553_open.o     -EL  
+C:\QNX650\host\win32\x86\usr\bin\ntoarm-ar: creating C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-le/liblib1553slave.a
+make.exe[2]: Leaving directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-le'
+C:/QNX650/host/win32/x86/usr/bin/make.exe -j 1 -Ca-le-g -fMakefile all  
+make.exe[2]: Entering directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-le-g'
+C:/QNX650/host/win32/x86/usr/bin/qcc -Vgcc_ntoarm -c  -Wc,-Wall             -I. -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a.le -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-le-g -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/public -IC:/QNX650/target/qnx6/usr/include       -EL   -g        -DVARIANT_a -DVARIANT_le -DVARIANT_g -DBUILDENV_qss  C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/i1553_close.c 
+C:/QNX650/host/win32/x86/usr/bin/qcc -Vgcc_ntoarm -c  -Wc,-Wall             -I. -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a.le -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-le-g -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/public -IC:/QNX650/target/qnx6/usr/include       -EL   -g        -DVARIANT_a -DVARIANT_le -DVARIANT_g -DBUILDENV_qss  C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/i1553_open.c 
+C:/QNX650/host/win32/x86/usr/bin/rm -f  C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-le-g/liblib1553slave_g.a
+C:/QNX650/host/win32/x86/usr/bin/qcc -Vgcc_ntoarm -a  C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-le-g/liblib1553slave_g.a i1553_close.o i1553_open.o     -EL   -g  
+C:\QNX650\host\win32\x86\usr\bin\ntoarm-ar: creating C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-le-g/liblib1553slave_g.a
+make.exe[2]: Leaving directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-le-g'
+C:/QNX650/host/win32/x86/usr/bin/make.exe -j 1 -Ca-shared-le -fMakefile all  
+make.exe[2]: Entering directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-shared-le'
+C:/QNX650/host/win32/x86/usr/bin/qcc -Vgcc_ntoarm -c -O -Wc,-Wall          -DNDEBUG   -I. -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-shared-le -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/public -IC:/QNX650/target/qnx6/usr/include          -EL     -shared   -DVARIANT_a -DVARIANT_shared -DVARIANT_le -DBUILDENV_qss  C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/i1553_close.c 
+C:/QNX650/host/win32/x86/usr/bin/qcc -Vgcc_ntoarm -c -O -Wc,-Wall          -DNDEBUG   -I. -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-shared-le -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/public -IC:/QNX650/target/qnx6/usr/include          -EL     -shared   -DVARIANT_a -DVARIANT_shared -DVARIANT_le -DBUILDENV_qss  C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/i1553_open.c 
+C:/QNX650/host/win32/x86/usr/bin/rm -f  C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-shared-le/liblib1553slaveS.a
+C:/QNX650/host/win32/x86/usr/bin/qcc -Vgcc_ntoarm -a  C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-shared-le/liblib1553slaveS.a i1553_close.o i1553_open.o        -EL  
+C:\QNX650\host\win32\x86\usr\bin\ntoarm-ar: creating C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-shared-le/liblib1553slaveS.a
+make.exe[2]: Leaving directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-shared-le'
+C:/QNX650/host/win32/x86/usr/bin/make.exe -j 1 -Ca-shared-le-g -fMakefile all
+make.exe[2]: Entering directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-shared-le-g'
+C:/QNX650/host/win32/x86/usr/bin/qcc -Vgcc_ntoarm -c  -Wc,-Wall             -I. -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a.shared.le -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-shared-le-g -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/public -IC:/QNX650/target/qnx6/usr/include          -EL   -g     -shared     -DVARIANT_a -DVARIANT_shared -DVARIANT_le -DVARIANT_g -DBUILDENV_qss  C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/i1553_close.c 
+C:/QNX650/host/win32/x86/usr/bin/qcc -Vgcc_ntoarm -c  -Wc,-Wall             -I. -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a.shared.le -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-shared-le-g -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave -IC:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/public -IC:/QNX650/target/qnx6/usr/include          -EL   -g     -shared     -DVARIANT_a -DVARIANT_shared -DVARIANT_le -DVARIANT_g -DBUILDENV_qss  C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/i1553_open.c 
+C:/QNX650/host/win32/x86/usr/bin/rm -f  C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-shared-le-g/liblib1553slave_gS.a
+C:/QNX650/host/win32/x86/usr/bin/qcc -Vgcc_ntoarm -a  C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-shared-le-g/liblib1553slave_gS.a i1553_close.o i1553_open.o        -EL   -g  
+C:\QNX650\host\win32\x86\usr\bin\ntoarm-ar: creating C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-shared-le-g/liblib1553slave_gS.a
+make.exe[2]: Leaving directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm/a-shared-le-g'
+make.exe[1]: Leaving directory `C:/Project/MyDesign/Firmware/QNX/BSP_Standard_Platform/lib1553slave/arm'
